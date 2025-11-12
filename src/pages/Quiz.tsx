@@ -184,14 +184,15 @@ export function Quiz(): JSX.Element {
         const gameData = {
             first_name: session.user.user_metadata.first_name,
             category,
-            numOfQuestions,
             difficulty,
             score: numOfCorrectAnswers(),
+            user_email: session.user?.email,
         };
+
+        const tableName =
+            numOfQuestions === '5' ? 'leaderboard5' : 'leaderboard10';
         try {
-            const { error } = await supabase
-                .from('leaderboard')
-                .insert(gameData);
+            const { error } = await supabase.from(tableName).insert(gameData);
             if (error) {
                 console.error('Error logging game: ', error.message);
             }

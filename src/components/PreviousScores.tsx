@@ -44,10 +44,8 @@ export default function PrevScores() {
     useEffect(() => {
         async function fetchLeaderboard(): Promise<void> {
             const res = await supabase
-                .from('leaderboard')
-                .select(
-                    `first_name, category, numOfQuestions, difficulty, score`
-                )
+                .from('leaderboard5')
+                .select(`first_name, category, difficulty, score`)
                 .like('first_name', 'Robert')
                 .order('id', { ascending: false });
             setStats(res.data);
@@ -58,7 +56,7 @@ export default function PrevScores() {
     const prevScoresData = stats
         ? stats.map((stat: Stat) => (
               <TableRow>
-                  <TableCell>{`${stat.score}/${stat.numOfQuestions}`}</TableCell>
+                  <TableCell>{`${stat.score}/5`}</TableCell>
                   <TableCell>{`${stat.difficulty[0].toUpperCase()}${stat.difficulty.slice(1)}`}</TableCell>
                   <TableCell>
                       {categories.find(
