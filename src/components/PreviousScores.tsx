@@ -31,14 +31,10 @@ type Stat = {
     score: string;
     first_name: string;
     difficulty: string;
-    numOfQuestions: string;
     category: string;
 };
 
 export default function PrevScores() {
-    // use effect for leaderboard filter for player name / email
-    // grab 5
-
     const [stats, setStats] = useState<Stat[] | null>([]);
 
     useEffect(() => {
