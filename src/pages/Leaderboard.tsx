@@ -7,7 +7,7 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import supabase from '@/utils/supabase-client';
 import { categories } from '@/utils/categories';
 
@@ -15,7 +15,6 @@ type Stat = {
     score: string;
     first_name: string;
     difficulty: string;
-    numOfQuestions: string;
     category: string;
 };
 

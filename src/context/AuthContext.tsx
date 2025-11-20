@@ -1,25 +1,10 @@
-import {
-    createContext,
-    useState,
-    useContext,
-    useEffect,
-    ReactNode,
-} from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 import supabase from '@/utils/supabase-client';
-
-interface Session {
-    access_token?: string;
-    token_type?: string;
-    user?: {
-        id: string;
-        email: string;
-        [key: string]: any;
-    } | null;
-    [key: string]: any;
-}
+import type { Session } from '@supabase/supabase-js';
 
 interface AuthContextValue {
-    session: Session | undefined;
+    session: Session | null;
     signInUser: (
         email: string,
         password: string
@@ -35,7 +20,7 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
-    const [session, setSession] = useState<Session | undefined>(undefined);
+    const [session, setSession] = useState<Session | null>(null);
 
     useEffect(() => {
         async function getInitialSession() {

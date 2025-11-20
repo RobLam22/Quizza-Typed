@@ -4,28 +4,26 @@ import { useState } from 'react';
 import {
     NavigationMenu,
     NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    NavigationMenuViewport,
 } from '@/components/ui/navigation-menu';
 
 export default function Header() {
     const { session, signOutUser } = useAuth();
-    const [error, setError] = useState(null);
+    const [_error, setError] = useState<string | undefined>(undefined);
     const navigate = useNavigate();
     console.log(session != null);
 
-    const handleSignOut = async (e) => {
+    const handleSignOut = async (e: React.MouseEvent) => {
         e.preventDefault();
 
-        const { success, error } = await signOutUser();
+        const { success, error: signOutErr } = await signOutUser();
         if (success) {
             navigate('/');
         } else {
-            setError(error.message);
+            setError(signOutErr ?? 'Something went wrong with signing out');
         }
     };
 

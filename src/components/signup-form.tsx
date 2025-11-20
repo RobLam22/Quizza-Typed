@@ -21,8 +21,8 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
     const { signUpNewUser } = useAuth();
     const navigate = useNavigate();
 
-    const [error, submitAction, isPending] = useActionState(
-        async (previousState, formData) => {
+    const [_error, submitAction, _isPending] = useActionState(
+        async (_previousState: unknown, formData: FormData) => {
             const email = formData.get('email')?.toString() ?? '';
             const password = formData.get('password')?.toString() ?? '';
             const firstName = formData.get('first-name')?.toString() ?? '';
@@ -41,10 +41,11 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
                 }
                 return null;
             } catch (error) {
-                console.error('Sign in error: ', error.message);
-                return new Error(
-                    'An unexpected error occurred. Please try again.'
-                );
+                if (error instanceof Error) {
+                    console.error('Sign in error:', error.message);
+                } else {
+                    console.error('Sign in error:', error);
+                }
             }
         },
         null

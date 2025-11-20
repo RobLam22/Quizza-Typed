@@ -38,7 +38,7 @@ export default function SetupQuiz() {
             <Card className="max-w-sm">
                 <CardHeader>
                     <CardTitle>Setup Quiz</CardTitle>
-                    <CardDescription className>
+                    <CardDescription>
                         What Do You Know? Do You Know Things? Let's Find Out!
                     </CardDescription>
                     <CardAction>

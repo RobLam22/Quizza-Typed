@@ -181,6 +181,8 @@ export function Quiz(): JSX.Element {
     }
 
     async function logGame(): Promise<void> {
+        if (!session?.user) return; // or redirect, or show loader
+
         const gameData = {
             first_name: session.user.user_metadata.first_name,
             category,
@@ -212,7 +214,7 @@ export function Quiz(): JSX.Element {
                         : `What Do You Know?`}
                 </p>
                 <button
-                    onClick={gameEnd ? restartGame : checkAnswers}
+                    onClick={(_e) => (gameEnd ? restartGame() : checkAnswers())}
                     className={
                         getSubmitBtnClass() ? styles.default : styles.locked
                     }

@@ -25,7 +25,7 @@ export function LoginForm({
     const { signInUser } = useAuth();
     const navigate = useNavigate();
     const [error, submitAction, isPending] = useActionState(
-        async (previousState, formData) => {
+        async (_previousState: unknown, formData: FormData) => {
             const email = formData.get('email')?.toString() ?? '';
             const password = formData.get('password')?.toString() ?? '';
             try {
@@ -42,7 +42,7 @@ export function LoginForm({
                     navigate('/setup');
                 }
                 return null;
-            } catch (error) {
+            } catch (error: any) {
                 console.error('Sign in error: ', error.message);
                 return new Error(
                     'An unexpected error occurred. Please try again.'
