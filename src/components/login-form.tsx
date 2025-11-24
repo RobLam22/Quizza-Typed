@@ -39,7 +39,7 @@ export function LoginForm({
                     return new Error(signInError);
                 }
                 if (success && data?.session) {
-                    navigate('/setup');
+                    navigate('/dashboard');
                 }
                 return null;
             } catch (error: any) {
