@@ -1,3 +1,5 @@
+import AboutImage from '../assets/about.jpg';
+
 export default function About() {
     return (
         <>
@@ -32,7 +34,7 @@ export default function About() {
                         </div>
                     </div>
                     <div className="text-right text-xs text-gray-200">
-                        <img src="../assets/about.jpg"></img>
+                        <img src={AboutImage}></img>
                         <a href="https://www.freepik.com/free-vector/quiz-concept-question-marks-shape-speech-bubble_11060777.htm#fromView=keyword&page=2&position=27&uuid=4dbe3ce1-f1c1-4d90-92f4-be5262212b2c&query=Quiz">
                             Image by macrovector on Freepik
                         </a>
