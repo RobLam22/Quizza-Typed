@@ -1,5 +1,3 @@
-import { about } from '../assets/about.jpg';
-
 export default function About() {
     return (
         <>
