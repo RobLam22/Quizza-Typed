@@ -33,6 +33,7 @@ export function Quiz(): JSX.Element {
     const { numOfQuestions, category, difficulty } = location.state || {};
 
     function generateString(num: string, cat: string, diff: string): string {
+        if (!session) return `https://opentdb.com/api.php?amount=5`;
         let baseStr: string = `https://opentdb.com/api.php?amount=${num}`;
         if (category != '0') baseStr += `&category=${cat}`;
         if (difficulty != 'any') baseStr += `&difficulty=${diff}`;
@@ -180,6 +181,7 @@ export function Quiz(): JSX.Element {
         setRestart((prevRestart: boolean) => !prevRestart);
     }
 
+    // Add score to leaderboard
     async function logGame(): Promise<void> {
         if (!session?.user) return; // or redirect, or show loader
 

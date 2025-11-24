@@ -14,13 +14,15 @@ export default function LandingTrue() {
                     </h1>
 
                     <p className="mt-4 text-base text-pretty text-gray-900 sm:text-lg/relaxed">
-                        Test yourself and what you know!
+                        Test yourself and what you know! Be sure to make an
+                        account to access more features such as picking
+                        categories, difficulties and length!
                     </p>
 
                     <div className="mt-4 flex justify-center gap-4 sm:mt-6">
                         <Link
                             className="inline-block rounded-md border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-md transition-colors hover:bg-indigo-700"
-                            to="/setup"
+                            to="/quiz"
                         >
                             Find Out!
                         </Link>

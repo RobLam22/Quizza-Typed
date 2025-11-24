@@ -140,8 +140,3 @@ export default function Header() {
         </header>
     );
 }
-//   {error && (
-//     <div role="role" className="error-message" id="signout-error">
-//       {error}
-//     </div>
-//   )}

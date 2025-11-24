@@ -52,7 +52,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
     );
 
     return (
-        <Card className="m-64" {...props}>
+        <Card className="m-auto max-w-sm md:max-w-md" {...props}>
             <CardHeader>
                 <CardTitle>Create an account</CardTitle>
                 <CardDescription>
@@ -115,9 +115,11 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
                         </Field>
                         <FieldGroup>
                             <Field>
-                                <Button type="submit">Create Account</Button>
-                                <Button variant="outline" type="button">
-                                    Sign up with Google
+                                <Button
+                                    className="bg-indigo-600 hover:bg-indigo-300"
+                                    type="submit"
+                                >
+                                    Create Account
                                 </Button>
                                 <FieldDescription className="px-6 text-center">
                                     Already have an account?{' '}
