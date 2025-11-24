@@ -5,7 +5,7 @@ import {
     CardDescription,
     CardHeader,
     CardTitle,
-} from '@/components/ui/card';
+} from '../components/ui/card';
 import {
     Table,
     TableBody,
@@ -13,7 +13,7 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from '@/components/ui/table';
+} from '../components/ui/table';
 import {
     Dialog,
     DialogContent,
@@ -21,11 +21,11 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import supabase from '@/utils/supabase-client';
+} from '../components/ui/dialog';
+import { Button } from '../components/ui/button';
+import supabase from '../utils/supabase-client';
 import { useState, useEffect } from 'react';
-import { categories } from '@/utils/categories';
+import { categories } from '../utils/categories';
 
 type Stat = {
     score: string;

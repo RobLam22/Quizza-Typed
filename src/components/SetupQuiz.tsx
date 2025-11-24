@@ -8,7 +8,7 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from '@/components/ui/select';
+} from '../components/ui/select';
 import {
     Card,
     CardAction,
@@ -17,7 +17,7 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from '@/components/ui/card';
+} from '../components/ui/card';
 import { Link } from 'react-router-dom';
 
 export default function SetupQuiz() {

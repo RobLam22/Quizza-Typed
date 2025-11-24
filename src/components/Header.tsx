@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '@/context/AuthContext.jsx';
+import { useAuth } from '../context/AuthContext.jsx';
 import { useState } from 'react';
 import {
     NavigationMenu,
@@ -8,7 +8,7 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
+} from '../components/ui/navigation-menu';
 
 export default function Header() {
     const { session, signOutUser } = useAuth();

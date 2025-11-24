@@ -1,5 +1,5 @@
-import PrevScores from '@/components/PreviousScores';
-import SetupQuiz from '@/components/SetupQuiz';
+import PrevScores from '../components/PreviousScores';
+import SetupQuiz from '../components/SetupQuiz';
 
 export default function Dashboard() {
     return (

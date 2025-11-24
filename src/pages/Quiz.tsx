@@ -3,8 +3,8 @@ import { decode } from 'he';
 import { shuffleAnswers } from '../utils/shuffleAnswers';
 import type { JSX } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAuth } from '@/context/AuthContext.jsx';
-import supabase from '@/utils/supabase-client';
+import { useAuth } from '../context/AuthContext.jsx';
+import supabase from '../utils/supabase-client';
 
 type Question = {
     category: string;

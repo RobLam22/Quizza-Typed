@@ -6,10 +6,10 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from '@/components/ui/table';
+} from '../components/ui/table';
 import { useState, useEffect } from 'react';
-import supabase from '@/utils/supabase-client';
-import { categories } from '@/utils/categories';
+import supabase from '../utils/supabase-client';
+import { categories } from '../utils/categories';
 
 type Stat = {
     score: string;

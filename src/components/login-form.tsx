@@ -1,21 +1,21 @@
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { cn } from '../lib/utils';
+import { Button } from '../components/ui/button';
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from '@/components/ui/card';
+} from '../components/ui/card';
 import {
     Field,
     FieldDescription,
     FieldGroup,
     FieldLabel,
-} from '@/components/ui/field';
-import { Input } from '@/components/ui/input';
+} from '../components/ui/field';
+import { Input } from '../components/ui/input';
 import { useActionState } from 'react';
-import { useAuth } from '@/context/AuthContext.jsx';
+import { useAuth } from '../context/AuthContext.jsx';
 import { Link, useNavigate } from 'react-router-dom';
 
 export function LoginForm({
