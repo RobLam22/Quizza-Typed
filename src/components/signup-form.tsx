@@ -52,7 +52,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
     );
 
     return (
-        <div className="flex justify-center items-center h-max">
+        <div className="flex justify-center items-center h-screen">
             <Card className="w-sm md:w-md" {...props}>
                 <CardHeader>
                     <CardTitle>Create an account</CardTitle>
