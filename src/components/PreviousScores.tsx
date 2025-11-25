@@ -66,67 +66,57 @@ export default function PrevScores() {
     const prevScoresShort = prevScoresData?.slice(0, 5);
 
     return (
-        <>
-            <Card className="max-w-md">
-                <CardHeader>
-                    <CardTitle>Previous Games</CardTitle>
-                    <CardDescription>
-                        See your score for all previous games played.
-                    </CardDescription>
-                    <CardAction>
-                        <Dialog>
-                            <DialogTrigger>
-                                <Button variant="ghost">See More</Button>
-                            </DialogTrigger>
-                            <DialogContent>
-                                <DialogHeader>
-                                    <DialogTitle>
-                                        All Recorded Games
-                                    </DialogTitle>
-                                    <DialogDescription>
-                                        <Table>
-                                            <TableHeader>
-                                                <TableRow>
-                                                    <TableHead className="w-[100px]">
-                                                        Score
-                                                    </TableHead>
-                                                    <TableHead>
-                                                        Difficulty
-                                                    </TableHead>
-                                                    <TableHead>
-                                                        Category
-                                                    </TableHead>
-                                                </TableRow>
-                                            </TableHeader>
-                                            <TableBody>
-                                                {prevScoresData}
-                                            </TableBody>
-                                        </Table>
-                                    </DialogDescription>
-                                </DialogHeader>
-                            </DialogContent>
-                        </Dialog>
-                    </CardAction>
-                </CardHeader>
-                <CardContent>
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHead className="w-[100px]">
-                                    Score
-                                </TableHead>
-                                <TableHead className="w-[100px]">
-                                    Difficulty
-                                </TableHead>
-                                <TableHead className="w-[100px]">
-                                    Category
-                                </TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>{prevScoresShort}</TableBody>
-                    </Table>
-                </CardContent>
-            </Card>
-        </>
+        <Card className="max-w-sm h-96">
+            <CardHeader>
+                <CardTitle>Previous Games</CardTitle>
+                <CardDescription>
+                    See your score for all previous games played.
+                </CardDescription>
+                <CardAction>
+                    <Dialog>
+                        <DialogTrigger>
+                            <Button variant="ghost">See More</Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>All Recorded Games</DialogTitle>
+                                <DialogDescription>
+                                    <Table>
+                                        <TableHeader>
+                                            <TableRow>
+                                                <TableHead className="w-[100px]">
+                                                    Score
+                                                </TableHead>
+                                                <TableHead>
+                                                    Difficulty
+                                                </TableHead>
+                                                <TableHead>Category</TableHead>
+                                            </TableRow>
+                                        </TableHeader>
+                                        <TableBody>{prevScoresData}</TableBody>
+                                    </Table>
+                                </DialogDescription>
+                            </DialogHeader>
+                        </DialogContent>
+                    </Dialog>
+                </CardAction>
+            </CardHeader>
+            <CardContent>
+                <Table>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHead className="w-[100px]">Score</TableHead>
+                            <TableHead className="w-[100px]">
+                                Difficulty
+                            </TableHead>
+                            <TableHead className="w-[100px]">
+                                Category
+                            </TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>{prevScoresShort}</TableBody>
+                </Table>
+            </CardContent>
+        </Card>
     );
 }
