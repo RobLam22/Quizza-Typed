@@ -52,86 +52,88 @@ export function LoginForm({
     );
 
     return (
-        <Card className="m-auto my-auto max-w-sm" {...props}>
-            <CardHeader>
-                <CardTitle>Login to your account</CardTitle>
-                <CardDescription>
-                    Enter your email below to login to your account
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <form action={submitAction}>
-                    <FieldGroup>
-                        <Field>
-                            <FieldLabel htmlFor="email">Email</FieldLabel>
-                            <Input
-                                id="email"
-                                type="email"
-                                name="email"
-                                placeholder="name@example.com"
-                                required
-                                aria-required="true"
-                                aria-invalid={error ? 'true' : 'false'}
-                                aria-describedby={
-                                    error ? 'signin-error' : undefined
-                                }
-                                disabled={isPending}
-                            />
-                        </Field>
-                        <Field>
-                            <div className="flex items-center">
-                                <FieldLabel htmlFor="password">
-                                    Password
-                                </FieldLabel>
-                                <a
-                                    href="#"
-                                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline hover:text-indigo-600"
+        <div className="flex justify-center items-center h-screen">
+            <Card className="w-sm" {...props}>
+                <CardHeader>
+                    <CardTitle>Login to your account</CardTitle>
+                    <CardDescription>
+                        Enter your email below to login to your account
+                    </CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <form action={submitAction}>
+                        <FieldGroup>
+                            <Field>
+                                <FieldLabel htmlFor="email">Email</FieldLabel>
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    name="email"
+                                    placeholder="name@example.com"
+                                    required
+                                    aria-required="true"
+                                    aria-invalid={error ? 'true' : 'false'}
+                                    aria-describedby={
+                                        error ? 'signin-error' : undefined
+                                    }
+                                    disabled={isPending}
+                                />
+                            </Field>
+                            <Field>
+                                <div className="flex items-center">
+                                    <FieldLabel htmlFor="password">
+                                        Password
+                                    </FieldLabel>
+                                    <a
+                                        href="#"
+                                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline hover:text-indigo-600"
+                                    >
+                                        Forgot your password?
+                                    </a>
+                                </div>
+                                <Input
+                                    id="password"
+                                    type="password"
+                                    name="password"
+                                    required
+                                    aria-required="true"
+                                    aria-invalid={error ? 'true' : 'false'}
+                                    aria-describedby={
+                                        error ? 'signin-error' : undefined
+                                    }
+                                    disabled={isPending}
+                                />
+                            </Field>
+                            <Field>
+                                <Button
+                                    className="bg-indigo-600 hover:bg-indigo-300"
+                                    type="submit"
+                                    aria-busy={isPending}
                                 >
-                                    Forgot your password?
-                                </a>
-                            </div>
-                            <Input
-                                id="password"
-                                type="password"
-                                name="password"
-                                required
-                                aria-required="true"
-                                aria-invalid={error ? 'true' : 'false'}
-                                aria-describedby={
-                                    error ? 'signin-error' : undefined
-                                }
-                                disabled={isPending}
-                            />
-                        </Field>
-                        <Field>
-                            <Button
-                                className="bg-indigo-600 hover:bg-indigo-300"
-                                type="submit"
-                                aria-busy={isPending}
-                            >
-                                {isPending ? 'Logging in' : 'Log In'}
-                            </Button>
-                            {error && (
-                                <p
-                                    id="signin-error"
-                                    className="text-red-500 text-sm text-center"
-                                >
-                                    {error.message}
-                                </p>
-                            )}
-                            <FieldDescription className="text-center">
-                                Don't have an account?{` `}
-                                <Link
-                                    className="hover:text-indigo-600"
-                                    to="/signup"
-                                >
-                                    Sign up
-                                </Link>
-                            </FieldDescription>
-                        </Field>
-                    </FieldGroup>
-                </form>
-            </CardContent>
-        </Card>
+                                    {isPending ? 'Logging in' : 'Log In'}
+                                </Button>
+                                {error && (
+                                    <p
+                                        id="signin-error"
+                                        className="text-red-500 text-sm text-center"
+                                    >
+                                        {error.message}
+                                    </p>
+                                )}
+                                <FieldDescription className="text-center">
+                                    Don't have an account?{` `}
+                                    <Link
+                                        className="hover:text-indigo-600"
+                                        to="/signup"
+                                    >
+                                        Sign up
+                                    </Link>
+                                </FieldDescription>
+                            </Field>
+                        </FieldGroup>
+                    </form>
+                </CardContent>
+            </Card>
+        </div>
     );
 }
