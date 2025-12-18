@@ -1,73 +1,30 @@
-# React + TypeScript + Vite
+# What Do You Know
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+This is a small quiz website where it generates questions for you to answer. If you are a registered user you can select a category and difficulty levels and either 5 or 10 questions. If you are just trying out, you will be given 5 random questions to answer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Link to project**: [What Do You Know?](https://whatdoyaknow.netlify.app/)
 
-## React Compiler
+## How It's Made:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+**Tech used:** React, Supabase, TypeScript, Tailwind, Open Trivia DB, ShadCN
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+I originally built this project using JavaScript, which can be found [here](https://github.com/RobLam22/Quizza). This was my most difficult project by far, building this by myself. I initally drew some sketches of what I thought my database should look like, alongside with my website and the routes I may have needed.
+The MVP for this project was two pages - home and quiz page.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+After I managed to link the two pages together to navigate between them and delivered the MVP. I challenged myself to add improvements. I added user functionality, being able to log in and out to track your scores from each quiz. Now you are able to select different categories, difficulty levels and either 5 or 10 questions for your quiz.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Lessons Learned:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+I found that drafting my page ideas and database structures really helped me get started with my vision and where things should be nested. The biggest challenge for me as this was my first project in TypeScript were all those pesky type errors. It was amazing to see the benefits of using TypeScript by alerting me of errors. Deploying live on Netlify was a lot more daunting with TypeScript, but it was a great experience to be able to debug all the errors to finally see it go live.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Development Ideas:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+In the future I want to be able to allow multiple users to join a room, where they can all play together to determine who knows the most! This would allow my app to go reach a wider audience. Being interactive with multiple people and being a fun activity to be used at work for team building or just a night with friends. Bring the trivia home to your living room.
